@@ -2,7 +2,7 @@
 import { useRootStore } from '../stores/root'
 import { Spec } from '../types';
 
-const { root, refers, stems } = defineProps<{
+const props = defineProps<{
     root: string,
     refers: string[]
     stems?: [
@@ -14,8 +14,8 @@ const { root, refers, stems } = defineProps<{
 
 const rootStore = useRootStore()
 
-function handleClick() {
-    rootStore.$patch({ root, refers, stems })
+const handleClick = () => {
+    rootStore.$patch(props)
 }
 </script>
 
