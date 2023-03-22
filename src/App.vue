@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import LexionDetails from './components/LexionDetails.vue'
 import SearchPanel from './components/SearchPanel.vue'
+import RootPanel from './components/RootPanel.vue'
 </script>
 
 <template>
     <SearchPanel />
-    <LexionDetails />
+    <RootPanel />
 </template>

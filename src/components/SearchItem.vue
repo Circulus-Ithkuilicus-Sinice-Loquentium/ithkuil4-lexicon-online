@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { useLexionStore } from '../stores/lexion';
+import { useRootStore } from '../stores/root'
 
-const { lexion, refers } = defineProps<{
-    lexion: string,
+const { root, refers } = defineProps<{
+    root: string,
     refers: string[]
 }>()
 
-const lexionStore = useLexionStore()
+const rootStore = useRootStore()
 
 function handleClick() {
-    lexionStore.$patch({ lexion, refers })
+    rootStore.$patch({ root, refers })
 }
 </script>
 
 <template>
     <div @click="handleClick">
-        <div v-text="lexion"></div>
+        <div v-text="root"></div>
         <div v-text="refers"></div>
     </div>
 </template>

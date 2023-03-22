@@ -1,4 +1,4 @@
-export type Lexion = {
-    lexion: string,
+export type Root = {
+    root: string,
     refers: string[]
 }

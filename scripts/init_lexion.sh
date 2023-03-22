@@ -5,19 +5,19 @@ then
     exit
 fi
 
-# Generate `lexion.json``
+# Generate `lexicon.json``
 mkdir -p packages && cd packages
-if [ -d "lexion-json" ] 
+if [ -d "lexicon-json" ] 
 then
-    echo "Directory \"lexion-json\" has existed. Skipped \"git clone\"."
+    echo "Directory \"lexicon-json\" has existed. Skipped \"git clone\"."
 else
-    git clone --depth 1 https://github.com/Circulus-Ithkuilicus-Sinice-Loquentium/lexion-json.git
+    git clone --depth 1 https://github.com/Circulus-Ithkuilicus-Sinice-Loquentium/lexicon-json.git
 fi
-cd lexion-json
+cd lexicon-json
 deno task minify
 
-# Copy the `lexion.json`
+# Copy the `lexicon.json`
 cd ../..
 mkdir -p src/data
-cp packages/lexion-json/output/minified.json src/data/lexion.ts
-sed -i '1h;1!H;$!d;x;s/.*/const lexions: { [key: string]: { refers: string } } = &; export default lexions;/' src/data/lexion.ts
+cp packages/lexicon-json/output/minified.json src/data/lexicon.ts
+sed -i '1h;1!H;$!d;x;s/.*/const lexicon: { root: string, refers: string }[] = &; export default lexicon;/' src/data/lexicon.ts

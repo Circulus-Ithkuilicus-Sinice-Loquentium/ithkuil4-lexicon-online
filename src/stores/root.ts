@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
 
-export const useLexionStore = defineStore('lexion', {
+export const useRootStore = defineStore('root', {
     state: () => {
         return { 
-            lexion: "",
+            root: "",
             refers: [] as string[]
         } 
     },
