@@ -1,15 +1,21 @@
 <script setup lang="ts">
 import { useRootStore } from '../stores/root'
+import { Spec } from '../types';
 
-const { root, refers } = defineProps<{
+const { root, refers, stems } = defineProps<{
     root: string,
     refers: string[]
+    stems?: [
+        Spec | string,
+        Spec | string,
+        Spec | string,
+    ]
 }>()
 
 const rootStore = useRootStore()
 
 function handleClick() {
-    rootStore.$patch({ root, refers })
+    rootStore.$patch({ root, refers, stems })
 }
 </script>
 

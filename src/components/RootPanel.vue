@@ -8,5 +8,8 @@ const lexionStore = useRootStore()
     <div>
         <div v-text="lexionStore.root"></div>
         <div v-text="lexionStore.refers"></div>
+        <div v-for="stem in lexionStore.stems">
+            <div v-text="stem"></div>
+        </div>
     </div>
 </template>

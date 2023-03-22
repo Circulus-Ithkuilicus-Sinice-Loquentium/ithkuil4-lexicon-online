@@ -15,7 +15,7 @@ function handleSearch(e: Event) {
     <div>
         <input @change="handleSearch">
         <div class="results" v-if="list.length > 0">
-            <SearchItem v-for="item in list" :root="item.root" :refers="item.refers" />
+            <SearchItem v-for="item in list" :root="item.root" :refers="item.refers" :stems="item.stems" />
         </div>
     </div>
 </template>

@@ -20,4 +20,4 @@ deno task minify
 cd ../..
 mkdir -p src/data
 cp packages/lexicon-json/output/minified.json src/data/lexicon.ts
-sed -i '1h;1!H;$!d;x;s/.*/const lexicon: { root: string, refers: string }[] = &; export default lexicon;/' src/data/lexicon.ts
+sed -i '1h;1!H;$!d;x;s/.*/const lexicon: { root: string, refers: string, stems?: [ { "BSC": string, "CTE": string, "CSV": string, "OBJ": string } | string, { "BSC": string, "CTE": string, "CSV": string, "OBJ": string } | string, { "BSC": string, "CTE": string, "CSV": string, "OBJ": string } | string ] }[] = &; export default lexicon;/' src/data/lexicon.ts
