@@ -5,6 +5,8 @@ const lexionStore = useLexionStore()
 </script>
 
 <template>
-    <div v-text="lexionStore.lexion"></div>
-    <div v-text="lexionStore.refers"></div>
+    <div>
+        <div v-text="lexionStore.lexion"></div>
+        <div v-text="lexionStore.refers"></div>
+    </div>
 </template>
