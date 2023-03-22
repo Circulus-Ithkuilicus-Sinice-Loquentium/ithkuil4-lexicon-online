@@ -1,12 +1,20 @@
 <script setup lang="ts">
-defineProps<{
+import { useLexionStore } from '../stores/lexion';
+
+const { lexion, refers } = defineProps<{
     lexion: string,
     refers: string[]
 }>()
+
+const lexionStore = useLexionStore()
+
+function handleClick() {
+    lexionStore.$patch({ lexion, refers })
+}
 </script>
 
 <template>
-    <div>
+    <div @click="handleClick">
         <div v-text="lexion"></div>
         <div v-text="refers"></div>
     </div>

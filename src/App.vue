@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Ref, ref } from 'vue';
 import SearchItem from './components/SearchItem.vue'
+import LexionDetails from './components/LexionDetails.vue'
 import { search } from './utils'
 import { Lexion } from './types';
 
@@ -16,4 +17,5 @@ function handleSearch(e: Event) {
     <div>
         <SearchItem v-for="item in list" :lexion="item.lexion" :refers="item.refers" />
     </div>
+    <LexionDetails />
 </template>
