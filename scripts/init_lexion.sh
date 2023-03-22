@@ -17,4 +17,5 @@ deno task minify
 # Copy the `lexion.json`
 cd ../..
 mkdir -p src/data
-cp packages/lexion-json/output/minified.json src/data/lexion.json
+cp packages/lexion-json/output/minified.json src/data/lexion.ts
+sed -i '1h;1!H;$!d;x;s/.*/const lexions: { [key: string]: { refers: string } } = &; export default lexions;/' src/data/lexion.ts
