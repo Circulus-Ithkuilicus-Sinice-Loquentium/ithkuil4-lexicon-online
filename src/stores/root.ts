@@ -6,11 +6,11 @@ export const useRootStore = defineStore('root', {
         return { 
             root: "",
             refers: [] as string[],
-            stems: [ '', '', ''] as [
+            stems: undefined as [
                 Spec | string,
                 Spec | string,
                 Spec | string,
-            ]
+            ] | undefined
         } 
     },
 })
