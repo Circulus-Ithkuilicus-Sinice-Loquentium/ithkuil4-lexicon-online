@@ -88,6 +88,7 @@ let currentStem = ref(0);
     .content {
         color: #11181c;
         padding-top: 5px;
+        line-height: 22px;
     }
 
     .specs {
