@@ -2,7 +2,7 @@
 if ! command -v deno &> /dev/null
 then
     echo "You need to install Deno before running this script"
-    exit
+    exit 127
 fi
 
 # Generate `lexicon.json``
