@@ -6,7 +6,7 @@ export function search(keyword: string): Root[] {
     const list: Root[] = [];
     for (let i = 0; i < lexicon.length; i++) {
         if (list.length === 10) break;
-        const { root, refers, stems } = lexicon[i];
+        const { root, refers, stems, notes } = lexicon[i];
         if (
             root.toLowerCase().includes(lowerCaseKeyword) ||
             refers.toLowerCase().includes(lowerCaseKeyword)
@@ -14,7 +14,8 @@ export function search(keyword: string): Root[] {
             list.push({
                 root,
                 refers: refers.split(' / '),
-                stems
+                stems,
+                notes
             })
         }
     }

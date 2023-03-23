@@ -23,10 +23,8 @@ let currentStem = ref(0);
     </div>
     <div class="viewer">
         <div v-if="typeof stems[currentStem] === 'string'" class="specs">
-            <div>
-                <span class="head">Unspecified</span>
-            </div>
-            <span v-text="stems[currentStem]"></span>
+            <span class="head">Unspecified</span>
+            <span class="content" v-text="stems[currentStem]"></span>
         </div>
         <div v-else class="specs">
             <template v-for="spec in (['BSC', 'CTE', 'CSV', 'OBJ'] as const)">
@@ -42,7 +40,7 @@ let currentStem = ref(0);
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
 
     .inner {
         display: flex;
@@ -61,6 +59,7 @@ let currentStem = ref(0);
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            transition: all ease .2s;
         }
 
         span.selected {
@@ -72,6 +71,10 @@ let currentStem = ref(0);
 }
 
 .viewer {
+    box-shadow: rgba(104, 112, 118, 0.08) 0px 12px 20px 6px;
+    padding: 16px;
+    border-radius: 8px;
+
     .head {
         background: #363449;
         color: #fff;
@@ -84,6 +87,7 @@ let currentStem = ref(0);
 
     .content {
         color: #11181c;
+        padding-top: 5px;
     }
 
     .specs {

@@ -12,5 +12,6 @@ export type Root = {
         Spec | string,
         Spec | string,
         Spec | string,
-    ]
+    ],
+    notes?: string
 }

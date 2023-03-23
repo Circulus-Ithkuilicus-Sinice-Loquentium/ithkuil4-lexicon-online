@@ -3,14 +3,20 @@ import { Spec } from '../types'
 
 export const useRootStore = defineStore('root', {
     state: () => {
-        return { 
+        return {
             root: "",
-            refers: [] as string[],
-            stems: undefined as [
+            refers: [],
+            stems: undefined,
+            notes: undefined
+        } as {
+            root: string,
+            refers: string[],
+            stems: [
                 Spec | string,
                 Spec | string,
                 Spec | string,
-            ] | undefined
-        } 
+            ] | undefined,
+            notes: string | undefined
+        }
     },
 })
