@@ -13,7 +13,9 @@ function handleSearch(e: Event) {
 
 <template>
     <div>
-        <input @change="handleSearch">
+        <div class="input">
+            <input @change="handleSearch" id="searchInput" placeholder="Search...">
+        </div>
         <div class="results" v-if="list.length > 0">
             <SearchItem v-for="item in list" :root="item.root" :refers="item.refers" :stems="item.stems" />
         </div>
@@ -21,17 +23,32 @@ function handleSearch(e: Event) {
 </template>
 
 <style scoped lang="less">
+.input {
+    display: flex;
+    justify-content: center;
+    margin: 16px;
+
+    input {
+        background: #eceef0;
+        border-radius: 20px;
+        font-size: 16px;
+        padding: 8px 16px;
+        border: none;
+        background-color: #eceef0;
+        outline: none;
+    }
+}
+
 .results {
     user-select: none;
     cursor: pointer;
-    border: 1px #000 solid;
+    margin: 36px;
+    box-shadow: rgba(104, 112, 118, 0.08) 0px 12px 20px 6px;
+    border-radius: 8px;
+    padding: 8px;
 
     div {
-        border-bottom: 1px #000 solid;
-    }
-
-    div:last-child {
-        border: none;
+        padding: 8px 16px;
     }
 }
 </style>

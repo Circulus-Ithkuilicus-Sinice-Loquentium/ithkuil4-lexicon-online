@@ -11,6 +11,7 @@ defineProps<{
 <style scoped>
 span {
     background-color: #363449;
+    flex-shrink: 0;
     color: #fff;
     padding: 4px 8px;
     border-radius: 8px;
