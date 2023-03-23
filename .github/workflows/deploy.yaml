@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@main
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
       - run: ./scripts/init_lexicon.sh
       - run: npm ci
       - run: npm run build
