@@ -1,0 +1,20 @@
+name: Deploy Github Pages
+on: 
+  push:
+    brancheds:
+      - main
+jobs:
+  deploy:
+    name: Deploy Github Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      - run: ./scripts/init_lexicon.sh
+      - run: npm ci
+      - run: npm run build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          branch: gh-pages
+          folder: dist
