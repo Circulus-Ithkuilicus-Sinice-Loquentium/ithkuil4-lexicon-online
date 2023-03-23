@@ -10,7 +10,7 @@ const lexionStore = useRootStore()
 
 <template>
     <div class="root">
-        <h2 class="root" v-text="lexionStore.root"></h2>
+        <h2 class="root" v-text="`-${lexionStore.root}-`"></h2>
         <div class="labels">
             <Label v-for="paraphrase in lexionStore.refers" :name="paraphrase"></Label>
         </div>
