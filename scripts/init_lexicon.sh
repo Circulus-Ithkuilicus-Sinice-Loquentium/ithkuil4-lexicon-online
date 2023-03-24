@@ -20,4 +20,4 @@ deno task json
 cd ../..
 mkdir -p src/data
 cp packages/lexicon-json/output/lexicon.json src/data/lexicon.ts
-sed -i '1h;1!H;$!d;x;s/.*/const lexicon: { root: string, refers: string, stems?: [ { "BSC": string, "CTE": string, "CSV": string, "OBJ": string } | string, { "BSC": string, "CTE": string, "CSV": string, "OBJ": string } | string, { "BSC": string, "CTE": string, "CSV": string, "OBJ": string } | string ], notes?: string }[] = &; export default lexicon;/' src/data/lexicon.ts
+sed -i '1h;1!H;$!d;x;s/.*/const lexicon: { root: string, refers?: string, stems?: [ { "BSC": string, "CTE": string, "CSV": string, "OBJ": string } | string, { "BSC": string, "CTE": string, "CSV": string, "OBJ": string } | string, { "BSC": string, "CTE": string, "CSV": string, "OBJ": string } | string ], notes?: string }[] = &; export default lexicon;/' src/data/lexicon.ts

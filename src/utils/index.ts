@@ -9,11 +9,11 @@ export function search(keyword: string): Root[] {
         const { root, refers, stems, notes } = lexicon[i];
         if (
             root.toLowerCase().includes(lowerCaseKeyword) ||
-            refers.toLowerCase().includes(lowerCaseKeyword)
+            (refers ? refers.toLowerCase().includes(lowerCaseKeyword) : false)
         ) {
             list.push({
                 root,
-                refers: refers.split(' / '),
+                refers: refers ? refers.split(' / ') : [],
                 stems,
                 notes
             })
